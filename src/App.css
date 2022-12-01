@@ -1,4 +1,40 @@
-input {
+* {
+ box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  color: #333;
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: Georgia, serif;
+  font-family: var(--type-first);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+
+  margin: 0px;
+}
+
+ul, li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
   display: block;
-  margin-bottom: 1rem;
+  max-width: 100%;
+}
+
+button {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  color: #333;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
