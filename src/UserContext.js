@@ -10,24 +10,23 @@ export const UserStorage = ({ children }) => {
   const [error, setError] = React.useState(null);
 
   async function getUser(token) {
-    const { url, options } = USER_GET(token); // USER_GET é uma função que retorna um objeto com url e options
+    const { url, options } = USER_GET(token);
     const response = await fetch(url, options);
     const json = await response.json();
-    setData(json); // seta o estado data com o json
-    setLogin(true); // seta o estado login com true
-    console.log(json)
+    setData(json);
+    setLogin(true);
   }
 
-  async function userLogin(username, password){
-    const {url, options} = TOKEN_POST({ username, password });
+  async function userLogin(username, password) {
+    const { url, options } = TOKEN_POST({ username, password });
     const tokenRes = await fetch(url, options);
-    const { token } = await tokenRes.json(); 
-    window.localStorage.setItem('token', token); // Salva o token no localStorage
-    getUser(token); // Busca os dados do usuário
+    const { token } = await tokenRes.json();
+    window.localStorage.setItem('token', token);
+    getUser(token);
   }
 
   return (
-    <UserContext.Provider value={{ userLogin }}>
+    <UserContext.Provider value={{ userLogin, data }}>
       {children}
     </UserContext.Provider>
   );

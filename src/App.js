@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-// import { Api } from './api/Api'; TESTAR API
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -12,13 +11,13 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <UserStorage>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login/*" element={<Login />} />
-        </Routes>
-        <Footer />
+        <UserStorage>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login/*" element={<Login />} />
+          </Routes>
+          <Footer />
         </UserStorage>
       </BrowserRouter>
     </div>
